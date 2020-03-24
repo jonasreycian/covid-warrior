@@ -42,11 +42,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/enemy_body.png
-    - lib/assets/enemy_eye.png
-    - lib/assets/player_help.png
-    - lib/assets/player_sad.png
-    - lib/assets/player_warrior.png
+    - assets/enemy_body.png
+    - assets/enemy_eye.png
+    - assets/player_help.png
+    - assets/player_sad.png
+    - assets/player_warrior.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
