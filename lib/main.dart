@@ -1,18 +1,23 @@
+import 'package:covid_warrior/game_controller.dart';
+import 'package:flame/util.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-    );
-  }
+  Util flameUtil = Util();
+  await flameUtil.fullScreen();
+  await flameUtil.setOrientation(DeviceOrientation.portraitUp);
+
+  SharedPreferences storage = await SharedPreferences.getInstance();
+
+  GameController gameController = GameController(storage);
+  runApp(gameController.widget);
+
+  TapGestureRecognizer tapper = TapGestureRecognizer();
+  tapper.onTapDown = gameController.onTapDown;
+  flameUtil.addGestureRecognizer(tapper);
 }
