@@ -14,6 +14,7 @@ class Constant {
   static const String PLAYER_HELP = 'assets/player_help.png';
   static const String PLAYER_SAD = 'assets/player_sad.png';
   static const String PLAYER_WARRIOR = 'assets/player_warrior.png';
+  static const String PLAYER_WARRIOR_SQ = 'assets/player_warrior_sq.png';
 }
 
 enum State { menu, playing }

@@ -1,4 +1,4 @@
-name: Covid-19 Warrior
+name: covid_warrior
 description: Fight the virus by tapping the enemy 3x!
 
 # The following defines the version and build number for your application.
@@ -34,7 +34,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon" 
   ios: true
-  image_path: "assets/player_warrior.png"
+  image_path: "assets/player_warrior_sq.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -53,6 +53,7 @@ flutter:
     - assets/player_help.png
     - assets/player_sad.png
     - assets/player_warrior.png
+    - assets/player_warrior_sq.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
