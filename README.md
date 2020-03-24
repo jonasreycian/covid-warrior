@@ -6,7 +6,6 @@
     <img src="https://raw.githubusercontent.com/jonasreycian/covid-warrior/develop/assets/player_warrior.png" alt="Logo" height="200">
   </a>
 
-
   <h2 align="center">COVID-19 Warrior</h2>
 
   <p align="center">
@@ -14,7 +13,6 @@
   </p>
 </p>
 
-----
 
 [![Maintenance][maintenance-shield]][maintenance-url] [![GitHub contributors][contributors-shield]][contributors-url] [![PRs Welcome][pr-welcome-shield]][pr-welcome-url] [![GitHub pull-requests][pull-request-open-shield]][pull-request-open-url] [![GitHub pull-requests closed][pull-request-close-shield]][pull-request-close-url] [![GitHub issues][issue-open-shield]][issue-open-url] [![GitHub issues-closed][issue-close-shield]][issue-close-url]
 [![LinkedIn][linkedin-jonas-shield]][linkedin-jonas-url] [![LinkedIn][linkedin-jonel-shield]][linkedin-jonel-url]
