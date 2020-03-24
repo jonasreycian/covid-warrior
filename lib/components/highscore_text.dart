@@ -2,6 +2,7 @@ import 'package:covid_warrior/game_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+/// Records the highest obtained score of the user 
 class HighScoreText {
   final GameController gameController;
   TextPainter painter;
@@ -15,10 +16,12 @@ class HighScoreText {
     position = Offset.zero;
   }
 
+  /// Draw the text in the canvas
   void render(Canvas c) {
     painter.paint(c, position);
   }
 
+  /// Update the score
   void update(double t) {
     int highscore = gameController.storage.getInt('highscore') ?? 0;
 
