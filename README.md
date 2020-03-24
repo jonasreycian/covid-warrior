@@ -1,6 +1,6 @@
-# covid_warrior
+# Covid Warrior
 
-A new Flutter project.
+...
 
 ## Getting Started
 
