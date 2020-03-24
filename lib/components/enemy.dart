@@ -59,6 +59,16 @@ class Enemy {
             Offset.fromDirection(toPlayer.direction, stepDistance);
         enemyRect = enemyRect.shift(stepToPlayer);
       }
+      else {
+        attack();
+      }
+    }
+  }
+
+  // Decrease player's health
+  void attack(){
+    if (gameController.player.isDead == false){
+      gameController.player.currentHealth -= damage;
     }
   }
 
@@ -67,7 +77,13 @@ class Enemy {
       health--;
       if (health <= 0) {
         isDead = true;
-        // score
+        
+        gameController.score++;
+        
+        // Set the highscore
+        if(gameController.score > (gameController.storage.getInt('highschor') ?? 0)){
+          gameController.storage.setInt('highscore', gameController.score);
+        }
       }
     }
   }
