@@ -42,7 +42,13 @@ class Player {
     // );
   }
 
-  void update(double t) {}
+  void update(double t) {
+    if(isDead == false && currentHealth <= 0){
+      isDead = true;
+      
+      gameController.initialize();
+    }
+  }
 
   void resize(Size size) {}
 
