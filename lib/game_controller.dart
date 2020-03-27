@@ -14,7 +14,7 @@ import 'package:flame/game/game.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class GameController extends Game {
+class GameController extends BaseGame {
   final SharedPreferences storage;
   Size screenSize;
   double tileSize;

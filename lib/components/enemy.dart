@@ -4,7 +4,7 @@ import 'package:covid_warrior/helper/constant.dart';
 
 import '../game_controller.dart';
 
-/// Define the enemy attributes 
+/// Define the enemy attributes
 class Enemy {
   final GameController gameController;
   int health;
