@@ -4,6 +4,7 @@ import 'package:covid_warrior/helper/constant.dart';
 
 import '../game_controller.dart';
 
+/// Define the enemy attributes
 class Enemy {
   final GameController gameController;
   int health;
@@ -12,9 +13,7 @@ class Enemy {
   Rect enemyRect;
   bool isDead = false;
 
-  /**
-   * x and y are the coordinates to spawn the enemy
-   */
+  /// x and y are the coordinates to spawn the enemy
   Enemy(this.gameController, double x, double y) {
     health = 3;
     damage = 1;
@@ -28,6 +27,7 @@ class Enemy {
     );
   }
 
+  /// This changed the color of the enemy when tapped.
   void render(Canvas c) {
     Color color;
     switch (health) {
@@ -48,40 +48,44 @@ class Enemy {
     c.drawRect(enemyRect, enemyColor);
   }
 
+  /// Move the enemy closer to the player.
   void update(double t) {
     if (isDead == false) {
       double stepDistance = speed * t;
-      Offset toPlayer = gameController.player.playerRect.center - enemyRect.center;
+      Offset toPlayer =
+          gameController.player.playerRect.center - enemyRect.center;
 
       // Mover closer to player direction
       if (stepDistance <= toPlayer.distance - gameController.tileSize * 1.25) {
         Offset stepToPlayer =
             Offset.fromDirection(toPlayer.direction, stepDistance);
         enemyRect = enemyRect.shift(stepToPlayer);
-      }
-      else {
+      } else {
         attack();
       }
     }
   }
 
-  // Decrease player's health
-  void attack(){
-    if (gameController.player.isDead == false){
+  /// Decrease player's health when attack.
+  void attack() {
+    if (gameController.player.isDead == false) {
       gameController.player.currentHealth -= damage;
     }
   }
 
+  /// Reduce the enemy's health when tapped and record it's highscore when
+  /// the game is over.
   void onTapDown() {
     if (isDead == false) {
       health--;
       if (health <= 0) {
         isDead = true;
-        
+
         gameController.score++;
-        
+
         // Set the highscore
-        if(gameController.score > (gameController.storage.getInt('highschor') ?? 0)){
+        if (gameController.score >
+            (gameController.storage.getInt('highscore') ?? 0)) {
           gameController.storage.setInt('highscore', gameController.score);
         }
       }
