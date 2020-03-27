@@ -23,7 +23,7 @@ class Player extends SpriteComponent {
   Player(this.gameController) {
     maxHealth = currentHealth = 300;
 
-    _size = gameController.tileSize * 3;
+    _size = gameController.tileSize * 1.5;
 
     playerRect = Rect.fromLTWH(
       gameController.screenSize.width * 0.5 - _size * 0.5,
@@ -31,11 +31,17 @@ class Player extends SpriteComponent {
       _size,
       _size,
     );
+
+    _p = Position.fromSize(gameController.screenSize);
+    _positionSize = Position.fromSize(gameController.screenSize);
   }
 
   @override
   void render(Canvas c) {
-    _playerSprite.renderCentered(c, _p, size: _positionSize);
+    //_playerSprite.renderCentered(c, _p, size: _positionSize);
+    Paint playerPaint = Paint()..color = Constant.PLAYER_BACKGROUD_COLOR;
+    //c.drawRect(playerRect, playerPaint);
+    c.drawOval(playerRect, playerPaint);
   }
 
   @override
